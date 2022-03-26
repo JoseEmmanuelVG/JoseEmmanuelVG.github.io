@@ -1,0 +1,129 @@
+body{
+    background-image: url("./Pokedex_JEVG.png");
+    background-repeat: no-repeat;
+    background-size: 1250px;
+    background-position: relative;
+    background-position-x: center;
+    background-position-y: -225px; 
+}
+
+/*.Poke-Lista{
+    position: static;
+    top:0px; 
+    left: 0px;
+}
+
+.eye{
+    position:absolute;
+    width:1250px;
+    top: -550px;
+    left: 1000;
+    z-index: -2;
+  }
+  
+  .heaven
+  {
+    position:absolute;
+    width:1200px;
+    z-index: -3;
+  }
+
+form {
+    position: relative;
+    width: 150px;
+    margin: 20px auto;
+    top:573px; 
+    left: 289px;
+    
+}
+*/
+form {
+    position: relative;
+    width: 150px;
+    margin: 20px auto;
+    top:573px; 
+    left: 289px;
+    
+}
+
+input {
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: 80%;
+    padding: 12px;
+}
+ 
+.poke-card {
+    position: relative;
+    left:-10px;
+    top: -35px;
+    font-family: 'Roboto Mono', monospace;
+    max-width: 225px;
+    border-radius: 4px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: transparent;
+   /* border: 1px solid black;*/
+}
+/**/ 
+.poke-card::before {
+    content: '';
+    background: radial-gradient(black 33%, transparent 33%);
+    background-size: 3px 3px;
+    border-radius: 4px;
+    height: 130%;
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: -1;
+}
+
+.img-container {
+    position: relative;
+    width: 180px;
+    margin: 10px auto;
+}
+
+.poke-stats div {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 5px;
+    font-size: 15px;
+
+    position: relative;
+    top: 80px; 
+    left: 0px;
+    background-color: transparent;
+}
+
+.poke-types div {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px dashed black;
+
+    position: relative;
+    top: 175px;
+    left: 10px;
+    background-color: transparent;
+}
+
+.poke-img {
+    width: 180px;
+    border-radius: 50%;
+}
+.Regreso_Menu_Practicas{
+    position: absolute;
+    top: 0px; 
+    left: 0px;
+    width: 25%;
+
+}
+/**/
