@@ -2,7 +2,7 @@ export default function Page() {
   return (
     <main style={{ maxWidth: 960, margin: "0 auto", padding: "2rem" }}>
       <header style={{ marginBottom: "2rem" }}>
-        <h1 style={{ margin: 0 }}>José Emmanuel</h1>
+        <h1 style={{ margin: 0 }}>José Emmanue VGl</h1>
         <p style={{ margin: 0 }}>Software Engineer · RPA · IA Aplicada</p>
         <p style={{ marginTop: "0.5rem" }}>
           <a href="mailto:jevgjosemmanuel@gmail.com">jevgjosemmanuel@gmail.com</a> ·{" "}
