@@ -1,13 +1,15 @@
 export default function Page() {
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "2rem" }}>
-      <header style={{ marginBottom: "2rem" }}>
-        <h1 style={{ margin: 0 }}>José Emmanuel</h1>
-        <p style={{ margin: 0 }}>Software Engineer · RPA · IA Aplicada</p>
-        <p style={{ marginTop: "0.5rem" }}>
-          <a href="mailto:jevgjosemmanuel@gmail.com">jevgjosemmanuel@gmail.com</a> ·{" "}
-          <a href="https://github.com/JoseEmmanuelVG" target="_blank">GitHub</a> ·{" "}
-          <a href="https://www.linkedin.com/in/..." target="_blank">LinkedIn</a>
+    <main className="mx-auto max-w-3xl px-6 py-12">
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight">José Emmanuel VG</h1>
+        <p className="text-sm mt-1 text-[var(--color-muted)]">
+          Software Engineer · RPA · IA Aplicada
+        </p>
+        <p className="mt-2 space-x-3 text-sm">
+          <a className="underline decoration-[var(--color-primary)] underline-offset-2" href="mailto:jevgjosemmanuel@gmail.com">jevgjosemmanuel@gmail.com</a>
+          <a className="underline decoration-[var(--color-primary)] underline-offset-2" href="https://github.com/JoseEmmanuelVG" target="_blank">GitHub</a>
+          <a className="underline decoration-[var(--color-primary)] underline-offset-2" href="https://www.linkedin.com/in/vazquez-galan-jose-emmanuel-664968221/" target="_blank">LinkedIn</a>
         </p>
       </header>
 
