@@ -1,3 +1,18 @@
 /* app/globals.css */
-:root { color-scheme: light dark; }
-body { margin: 0; font-family: system-ui, sans-serif; }
+@import "tailwindcss";
+
+/* Paleta mínima + tipografía (opcional) */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Noto Sans", sans-serif;
+  --color-text: #0f172a;        /* slate-900 */
+  --color-muted: #475569;       /* slate-600 */
+  --color-primary: #2563eb;     /* blue-600 */
+  --color-bg: #ffffff;
+  --color-card: #f8fafc;        /* slate-50 */
+}
+
+html {
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-sans);
+}
