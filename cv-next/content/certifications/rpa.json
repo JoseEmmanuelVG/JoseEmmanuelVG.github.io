@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Automation Anywhere Developer Career Quest",
+    "issuer": "Automation Anywhere",
+    "year": 2025,
+    "file": "/certs/aa-dev-quest.png",
+    "tags": ["RPA", "AA"]
+  },
+  {
+    "title": "Scrum Fundamentals Certified (SFC)",
+    "issuer": "ScrumStudy",
+    "year": 2025,
+    "file": "/certs/sfc.png",
+    "tags": ["Scrum", "Agile"]
+  }
+]

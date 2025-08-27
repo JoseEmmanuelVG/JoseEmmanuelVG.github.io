@@ -1,0 +1,3 @@
+export default function Card({ children }: { children: React.ReactNode }) {
+  return <div className="rounded-xl border border-slate-200 p-4">{children}</div>;
+}
