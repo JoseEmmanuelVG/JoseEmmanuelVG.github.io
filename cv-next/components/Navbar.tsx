@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const links = [
-  { href: "/", label: "Inicio" },
-  { href: "/projects", label: "Proyectos" },
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
   { href: "/rpa", label: "RPA" },
-  { href: "/publications", label: "Publicaciones" },
+  { href: "/publications", label: "Publications" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contacto" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {

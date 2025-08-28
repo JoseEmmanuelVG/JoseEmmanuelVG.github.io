@@ -5,7 +5,7 @@ export default function Home() {
     <section className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">José Emmanuel Vázquez-Galán</h1>
-        <p className="text-slate-600 mt-1">Software Engineer · RPA · IA Aplicada</p>
+  <p className="text-slate-600 mt-1">Software Engineer · RPA · Applied AI</p>
         <p className="mt-2 text-sm">
           <a className="underline" href="mailto:jevgjosemmanuel@gmail.com">jevgjosemmanuel@gmail.com</a> ·{" "}
           <a className="underline" href="https://github.com/JoseEmmanuelVG" target="_blank">GitHub</a> ·{" "}
@@ -19,11 +19,11 @@ export default function Home() {
         <ul className="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
           <li>RPA (Automation Anywhere, Power Automate). PDD/TDD, PoCs, KPIs.</li>
           <li>AI/ML & Data, Web/Cloud (Next.js), Embedded/Mechatronics, Blockchain.</li>
-          <li>Publicaciones: CCE 2024, RCS. Blog humanístico: <a className="underline" href="https://bonzopedia.com" target="_blank">Bonzopedia</a>.</li>
+          <li>Publications: CCE 2024, RCS. Humanistic blog: <a className="underline" href="https://bonzopedia.com" target="_blank">Bonzopedia</a>.</li>
         </ul>
         <div className="mt-4 flex gap-3 text-sm">
-          <Link className="rounded-lg border px-3 py-1 hover:bg-slate-100" href="/projects">Ver proyectos</Link>
-          <Link className="rounded-lg border px-3 py-1 hover:bg-slate-100" href="/rpa">Certificados RPA</Link>
+          <Link className="rounded-lg border px-3 py-1 hover:bg-slate-100" href="/projects">View Projects</Link>
+          <Link className="rounded-lg border px-3 py-1 hover:bg-slate-100" href="/rpa">RPA Certificates</Link>
         </div>
       </div>
     </section>
