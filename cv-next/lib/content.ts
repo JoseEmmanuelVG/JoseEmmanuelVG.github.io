@@ -28,8 +28,22 @@ export function getProjectSlugs(): string[] {
 export function getProjectSource(slug: string): { source: string; data: ProjectMeta } {
   const file = path.join(PROJECTS_DIR, `${slug}.mdx`);
   const raw = fs.readFileSync(file, "utf-8");
-  const { content, data } = matter(raw);
-  const meta: ProjectMeta = { slug, ...(data as any) };
+  const { content, data } = matter(raw); // data: unknown (tipado laxo del paquete)
+
+  // Normaliza y valida sin usar `any`
+  const d = data as Record<string, unknown>;
+
+  const meta: ProjectMeta = {
+    slug,
+    title: typeof d.title === "string" ? d.title : slug,
+    summary: typeof d.summary === "string" ? d.summary : undefined,
+    category: Array.isArray(d.category) ? (d.category as unknown[]).map(String) : undefined,
+    tech: Array.isArray(d.tech) ? (d.tech as unknown[]).map(String) : undefined,
+    repo: typeof d.repo === "string" ? d.repo : undefined,
+    date: typeof d.date === "string" ? d.date : undefined,
+    highlight: typeof d.highlight === "boolean" ? d.highlight : undefined,
+  };
+
   return { source: content, data: meta };
 }
 
