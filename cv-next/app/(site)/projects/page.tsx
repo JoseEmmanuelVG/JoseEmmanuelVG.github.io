@@ -2,16 +2,20 @@ import remarkGfm from "remark-gfm";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { MDXComponents } from "../../../components/mdx";
 import { getProjectSlugs, getProjectSource } from "../../../lib/content";
+import type { PageProps } from "next"; // Nota: Tipado oficial
 
 export async function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
 }
 
-// Nota: cambio clave: params es Promise<{ slug: string }>
+/**
+ * En algunos entornos (CI) Next tipa `params` como `Promise<any>`.
+ * Usamos PageProps con `Promise<{slug:string}>` y resolvemos con `await`.
+ */
 export default async function ProjectDetailPage(
-  props: { params: Promise<{ slug: string }> }
+  { params }: PageProps<Promise<{ slug: string }>>
 ) {
-  const { slug } = await props.params;
+  const { slug } = await params; // Nota clave: await params
 
   const { source, data } = getProjectSource(slug);
 
