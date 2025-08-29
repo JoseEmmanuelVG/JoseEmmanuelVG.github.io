@@ -1,7 +1,7 @@
 import remarkGfm from "remark-gfm";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { MDXComponents } from "@/components/mdx";
-import { getProjectSlugs, getProjectSource } from "@/lib/content";
+import { MDXComponents } from "../../../components/mdx";
+import { getProjectSlugs, getProjectSource } from "../../../lib/content";
 
 export async function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
