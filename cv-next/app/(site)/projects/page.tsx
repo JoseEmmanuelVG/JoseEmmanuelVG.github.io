@@ -1,14 +1,30 @@
-import ProjectsClient from "../../../components/ProjectsClient";
-import { getAllProjectMetas } from "../../../lib/content";
+import remarkGfm from "remark-gfm";
+import { compileMDX } from "next-mdx-remote/rsc";
+import { MDXComponents } from "@/components/mdx";
+import { getProjectSlugs, getProjectSource } from "@/lib/content";
 
-export const metadata = { title: "Projects | JEVG" };
+export async function generateStaticParams() {
+  return getProjectSlugs().map((slug) => ({ slug }));
+}
 
-export default function ProjectsPage() {
-  const projects = getAllProjectMetas().sort((a,b) => (b.date || "").localeCompare(a.date || ""));
+// Nota: cambio clave: params es Promise<{ slug: string }>
+export default async function ProjectDetailPage(
+  props: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await props.params;
+
+  const { source, data } = getProjectSource(slug);
+
+  const { content } = await compileMDX({
+    source,
+    options: { parseFrontmatter: false, mdxOptions: { remarkPlugins: [remarkGfm] } },
+    components: MDXComponents,
+  });
+
   return (
-    <>
-      <h1 className="text-2xl font-bold tracking-tight mb-4">Projects</h1>
-      <ProjectsClient projects={projects} />
-    </>
+    <article className="prose prose-slate max-w-none">
+      <h1 className="mb-2">{data.title}</h1>
+      {content}
+    </article>
   );
 }
