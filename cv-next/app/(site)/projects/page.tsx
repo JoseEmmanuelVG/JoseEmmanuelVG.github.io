@@ -1,5 +1,5 @@
 import ProjectsClient from "../../../components/ProjectsClient";
-import { getAllProjectMetas } from "@/lib/content";
+import { getAllProjectMetas } from "../../../lib/content";
 
 export const metadata = { title: "Projects | JEVG" };
 
