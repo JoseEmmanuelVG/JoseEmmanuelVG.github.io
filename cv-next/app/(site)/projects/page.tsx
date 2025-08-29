@@ -1,33 +1,14 @@
-import remarkGfm from "remark-gfm";
-import { compileMDX } from "next-mdx-remote/rsc";
-import { MDXComponents } from "../../../components/mdx";
-import { getProjectSlugs, getProjectSource } from "../../../lib/content";
+import ProjectsClient from "../../../components/ProjectsClient";
+import { getAllProjectMetas } from "@/lib/content";
 
-// Genera las rutas estáticas desde /content/projects/*.mdx
-export async function generateStaticParams() {
-  return getProjectSlugs().map((slug) => ({ slug }));
-}
+export const metadata = { title: "Projects | JEVG" };
 
-// Nota: Tipado compatible: objeto O promesa de objeto
-type Params = { slug: string };
-
-export default async function ProjectDetailPage(
-  props: { params: Params | Promise<Params> }
-) {
-  const { slug } = await Promise.resolve(props.params); // Nota clave
-
-  const { source, data } = getProjectSource(slug);
-
-  const { content } = await compileMDX({
-    source,
-    options: { parseFrontmatter: false, mdxOptions: { remarkPlugins: [remarkGfm] } },
-    components: MDXComponents,
-  });
-
+export default function ProjectsPage() {
+  const projects = getAllProjectMetas().sort((a,b) => (b.date || "").localeCompare(a.date || ""));
   return (
-    <article className="prose prose-slate max-w-none">
-      <h1 className="mb-2">{data.title}</h1>
-      {content}
-    </article>
+    <>
+      <h1 className="text-2xl font-bold tracking-tight mb-4">Projects</h1>
+      <ProjectsClient projects={projects} />
+    </>
   );
 }
