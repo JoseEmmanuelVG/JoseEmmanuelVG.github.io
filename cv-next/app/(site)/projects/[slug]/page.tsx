@@ -4,12 +4,20 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import { MDXComponents } from "../../../../components/mdx";
 import { getProjectSlugs, getProjectSource } from "../../../../lib/content";
 
+
 export async function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
 }
 
-export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const { source, data } = getProjectSource(params.slug);
+type Params = { slug: string };
+
+// Nota: Acepta objeto O promesa y resuélvelo con Promise.resolve
+export default async function ProjectDetailPage(
+  props: { params: Params | Promise<Params> }
+) {
+  const { slug } = await Promise.resolve(props.params);
+
+  const { source, data } = getProjectSource(slug);
 
   const { content } = await compileMDX({
     source,
