@@ -17,20 +17,20 @@ export default function Navbar() {
         <ul className="flex items-center gap-4 text-sm">
           {links.map((l) => (
             <li key={l.label}>
-              {l.external ? (
-                <a
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline underline-offset-4"
-                >
-                  {l.label}
-                </a>
-              ) : (
-                <Link className="hover:underline underline-offset-4" href={l.href}>
-                  {l.label}
-                </Link>
-              )}
+            {l.external ? (
+              <a
+                href={l.href}
+                target="_blank"                // 👈 abre en otra pestaña
+                rel="noopener noreferrer"      // 👈 seguridad/performance
+                className="hover:underline underline-offset-4"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link className="hover:underline underline-offset-4" href={l.href}>
+                {l.label}
+              </Link>
+            )}
             </li>
           ))}
         </ul>
