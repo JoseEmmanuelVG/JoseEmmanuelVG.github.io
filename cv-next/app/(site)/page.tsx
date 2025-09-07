@@ -161,8 +161,45 @@ export default function Home() {
         <TimelineSection title="Education" items={education} />
         
 
-        {/* Quick Access (Projects/Blog/RPA/Publications) – lo que ya tienes */}
-        {/* ... deja tu grid de 4 tarjetas tal como está ... */}
+{/* Quick Access */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 hover:shadow-md transition">
+          <h3 className="font-semibold">Projects</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Technical repositories: AI/ML, RPA bots, robotics, cloud, and academic research.
+          </p>
+          <Link href="/projects" className="mt-3 inline-block text-sm underline underline-offset-4">
+            View Projects →
+          </Link>
+        </div>
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 hover:shadow-md transition">
+          <h3 className="font-semibold">Blog</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            <strong>Bonzopedia</strong>: humanistic essays—ethics, society, communication, physics, math, and organizational studies.
+          </p>
+          <a href="https://bonzopedia.com" target="_blank" className="mt-3 inline-block text-sm underline underline-offset-4">
+            Visit Blog →
+          </a>
+        </div>
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 hover:shadow-md transition">
+          <h3 className="font-semibold">RPA</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Automation projects, professional journey, and certificates in AA & Power Automate.
+          </p>
+          <Link href="/rpa" className="mt-3 inline-block text-sm underline underline-offset-4">
+            View Certificates →
+          </Link>
+        </div>
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 hover:shadow-md transition">
+          <h3 className="font-semibold">Publications</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Scientific publications on synthetic EEG signal generation and related work.
+          </p>
+          <Link href="/publications" className="mt-3 inline-block text-sm underline underline-offset-4">
+            View Publications →
+          </Link>
+        </div>
+      </div>
       </section>
 
       {/* Contact (anchor target) */}
