@@ -1,23 +1,29 @@
 // components/Timeline.tsx
 type Position = {
-  role: string;            // "Software Engineer · RPA Consulting"
-  type?: string;           // "Full-time", "Contract", "Apprenticeship"
-  start: string;           // "Apr 2025"
-  end?: string;            // "Present" | "Jan 2025"
-  duration?: string;       // "5 mos"
+  role: string;
+  type?: string;
+  start: string;
+  end?: string;
+  duration?: string;
   bullets?: string[];
 };
 
 type TimelineItem = {
-  org: string;             // "ULTRASIST – An iLink Digital Company"
-  start: string;           // rango global del grupo: "Sep 2024"
-  end?: string;            // "Present"
-  duration?: string;       // opcional si lo quieres mostrar a nivel grupo
-  location?: string;       // "Mexico City, Mexico (Remote)"
-  summary?: string;        // breve label del grupo (opcional)
-  href?: string;           // link a org
-  logoSrc?: string;        // /images/logos/ultrasist.png
-  positions?: Position[];  // ← SUB-ROLES (ascensos/etapas)
+  org: string;
+  start: string;
+  end?: string;
+  duration?: string;
+  location?: string;
+  summary?: string;
+  href?: string;
+  logoSrc?: string;
+
+  // ✅ soporte para items sin positions:
+  role?: string;
+  type?: string;
+  bullets?: string[];
+
+  positions?: Position[];  // sub-roles (ascensos/etapas)
 };
 
 export function TimelineSection({
@@ -33,29 +39,24 @@ export function TimelineSection({
       <ol className="relative mt-5 border-s-2 border-slate-200 ps-5">
         {items.map((it, i) => (
           <li key={i} className="mb-8 ms-2">
-            {/* Punto del timeline */}
             <span className="absolute -start-1.5 mt-1 h-3 w-3 rounded-full border-2 border-white bg-slate-400 shadow ring-2 ring-slate-200" />
             <div className="flex items-start gap-3">
               {it.logoSrc ? (
-                <img
-                  src={it.logoSrc}
-                  alt={it.org}
-                  className="size-10 rounded object-contain"
-                />
+                it.href ? (
+                  <a href={it.href} target="_blank" rel="noreferrer">
+                    <img src={it.logoSrc} alt={it.org} className="size-10 rounded object-contain hover:opacity-80 transition" />
+                  </a>
+                ) : (
+                  <img src={it.logoSrc} alt={it.org} className="size-10 rounded object-contain" />
+                )
               ) : (
                 <div className="size-10 rounded bg-slate-100" />
               )}
 
               <div className="min-w-0">
-                {/* Cabecera del grupo */}
                 <div className="text-sm font-semibold leading-6 text-slate-900">
                   {it.href ? (
-                    <a
-                      className="underline decoration-slate-300 underline-offset-4 hover:decoration-slate-800"
-                      href={it.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a className="underline decoration-slate-300 underline-offset-4 hover:decoration-slate-800" href={it.href} target="_blank" rel="noreferrer">
                       {it.org}
                     </a>
                   ) : (
@@ -67,36 +68,45 @@ export function TimelineSection({
                   {it.duration ? ` · ${it.duration}` : ""}
                   {it.location ? ` · ${it.location}` : ""}
                 </div>
-                {it.summary ? (
-                  <p className="mt-2 text-sm text-slate-700">{it.summary}</p>
-                ) : null}
+                {it.summary ? <p className="mt-2 text-sm text-slate-700">{it.summary}</p> : null}
 
-                {/* Sub-roles (ascensos/etapas) */}
+                {/* ✅ si hay positions, las mostramos; si no, mostramos bloque simple con role/bullets del item */}
                 {it.positions?.length ? (
                   <div className="mt-3 space-y-3">
                     {it.positions.map((p, idx) => (
                       <div key={idx} className="rounded-lg border border-slate-200 p-3">
                         <div className="text-sm font-medium text-slate-900">
                           {p.role}
-                          {p.type ? (
-                            <span className="font-normal text-slate-600"> · {p.type}</span>
-                          ) : null}
+                          {p.type ? <span className="font-normal text-slate-600"> · {p.type}</span> : null}
                         </div>
                         <div className="mt-0.5 text-xs text-slate-600">
-                          {p.start} – {p.end ?? "Present"}
-                          {p.duration ? ` · ${p.duration}` : ""}
+                          {p.start} – {p.end ?? "Present"}{p.duration ? ` · ${p.duration}` : ""}
                         </div>
                         {p.bullets?.length ? (
                           <ul className="mt-2 list-disc ps-5 text-sm text-slate-700 space-y-1">
-                            {p.bullets.map((b, j) => (
-                              <li key={j}>{b}</li>
-                            ))}
+                            {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
                           </ul>
                         ) : null}
                       </div>
                     ))}
                   </div>
-                ) : null}
+                ) : (
+                  // ✅ fallback para items sin positions (LIPS, Bancambios)
+                  (it.role || it.bullets?.length) ? (
+                    <div className="mt-3 rounded-lg border border-slate-200 p-3">
+                      {it.role ? (
+                        <div className="text-sm font-medium text-slate-900">
+                          {it.role}{it.type ? <span className="font-normal text-slate-600"> · {it.type}</span> : null}
+                        </div>
+                      ) : null}
+                      {it.bullets?.length ? (
+                        <ul className="mt-2 list-disc ps-5 text-sm text-slate-700 space-y-1">
+                          {it.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                        </ul>
+                      ) : null}
+                    </div>
+                  ) : null
+                )}
               </div>
             </div>
           </li>

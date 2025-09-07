@@ -10,4 +10,4 @@
   --color-card: #f8fafc;        /* slate-50 */
 }
 
-html { color: var(--color-text); background: var(--color-bg); font-family: var(--font-sans); }
+html { color: var(--color-text); background: var(--color-bg); font-family: var(--font-sans); scroll-behavior: smooth; }
