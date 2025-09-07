@@ -5,7 +5,7 @@ const links = [
   { href: "/projects", label: "Projects" },
   { href: "/rpa", label: "RPA" },
   { href: "/publications", label: "Publications" },
-  { href: "/blog", label: "Blog" },
+  { href: "https://bonzopedia.com", label: "Blog", external: true },
   { href: "/#contact", label: "Contact" },
 ];
 
