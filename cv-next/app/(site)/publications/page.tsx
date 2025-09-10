@@ -60,7 +60,7 @@ const GROUPS: ProjectGroup[] = [
           { label: "ORCID record", href: ORCID_URL },
         ],
         contributors: [
-          { name: "José-Emmanuel Vázquez-Galán", role: "Author" },
+          { name: "José-Emmanuel Vázquez-Galán", role: "Main Author" },
           { name: "Blanca Tovar-Corona", role: "Author" },
           { name: "Laura-Ivoone Garay-Jiménez", role: "Author" },
           { name: "Martín-Arturo Silva-Ramírez", role: "Author" },
@@ -69,9 +69,9 @@ const GROUPS: ProjectGroup[] = [
       {
         kind: "Journal article",
         title:
-          "Synthetic EEG Signal Generator of Morphologies Associated with Epileptogenic Events",
-        date: "2024-12-01", // aprox si no tienes el día
-        venue: "Research in Computing Science (RCS)",
+          "Research in Computing Science (RCS)",
+        date: "2023-11-10",
+        venue: "___",
         venueNote:
           "Open-access scientific journal published by CIC-IPN. Focused on computer science and computing engineering research.",
         country: "Mexico",
