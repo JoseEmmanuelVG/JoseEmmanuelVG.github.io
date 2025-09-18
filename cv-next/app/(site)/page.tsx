@@ -101,7 +101,7 @@ export default function Home() {
       start: "Jan 2020",
       end: "Jan 2025",
       duration: "",
-      summary: "GPA: 9.43 / 10",
+      summary: "Professional License: 15155597 · GPA: 9.43 / 10",
       logoSrc: "/images/logos/Upiita.png",
       href: "https://www.upiita.ipn.mx/",
     },
@@ -111,7 +111,7 @@ export default function Home() {
       start: "Aug 2016",
       end: "Jul 2019",
       duration: "",
-      summary: "GPA: 9.11 / 10",
+      summary: "Professional License: 12907766 · GPA: 9.11 / 10",
       logoSrc: "/images/logos/Cecyt3.png",
       href: "https://www.cecyt3.ipn.mx/",
     },
@@ -123,7 +123,7 @@ export default function Home() {
         {/* Header */}
         <div>
           <h1 className="text-3xl font-bold tracking-tight">
-            José Emmanuel Vázquez-Galán
+            José Emmanuel Vázquez Galán
           </h1>
           <p className="mt-1 text-slate-600">Master Applied AI Student · Mechatronics Engineering | Software Engineer (🎯 RPA) · Freelance Full-Stack WebDev</p>
 
