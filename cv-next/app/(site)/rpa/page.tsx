@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+
+
 // app/(site)/rpa/page.tsx
 export const metadata = {
   title: "RPA | JEVG",
@@ -84,35 +88,30 @@ export default function RpaPage() {
       </section>
 
       {/* Power Automate / Udemy */}
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold">Microsoft Power Automate</h2>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          <a
-            href="/certs/PA/PA_Udemy-JEVG.png"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition"
-          >
-            <img
-              src="/certs/PA/PA_Udemy-JEVG.png"
-              alt="Power Automate Desktop — Udemy Certificate"
-              className="w-full rounded-md object-contain"
-            />
-            <div className="mt-2">
-              <h3 className="text-sm font-semibold">
-                Power Automate Desktop — Complete RPA Course
-              </h3>
-              <p className="mt-1 text-xs text-slate-600">Udemy · Instructor: Iván AlsiGo</p>
-              <p className="mt-2 text-sm text-slate-700">
-                Training account was provided for practice, so the certificate shows a
-                generic user. Hands-on modules were completed by{" "}
-                José&nbsp;Emmanuel&nbsp;Vázquez-Galán.
-              </p>
-            </div>
-          </a>
-        </div>
-      </section>
+<article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+  <div className="flex items-start gap-3">
+    <Image
+      src="/certs/PA/PA_Udemy-JEVG.png"
+      alt="Power Automate Desktop — Udemy Certificate"
+      width={250}
+      height={180}
+      className="rounded border border-slate-200 object-contain"
+    />
+    <div className="min-w-0">
+      <h3 className="text-sm font-semibold">
+        Power Automate Desktop — Complete RPA Course
+      </h3>
+      <p className="mt-1 text-xs text-slate-600">
+        Udemy · Instructor: Iván AlsiGo
+      </p>
+      <p className="mt-2 text-sm text-slate-700">
+        Training account was provided for practice, so the certificate
+        shows a generic user. Hands-on modules were completed by
+        José&nbsp;Emmanuel&nbsp;Vázquez-Galán.
+      </p>
+    </div>
+  </div>
+</article>
 
 
       {/* CTA to contact */}
