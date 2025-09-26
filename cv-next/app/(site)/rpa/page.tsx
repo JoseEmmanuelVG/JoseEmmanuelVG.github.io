@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
 
 // app/(site)/rpa/page.tsx
 export const metadata = {
@@ -15,6 +13,8 @@ type CertImageProps = {
   href: string;
 };
 
+import Image from "next/image";
+
 function CertImage({ title, imgSrc, href }: CertImageProps) {
   return (
     <a
@@ -23,15 +23,18 @@ function CertImage({ title, imgSrc, href }: CertImageProps) {
       rel="noreferrer"
       className="block rounded-xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition"
     >
-      <img
+      <Image
         src={imgSrc}
         alt={title}
+        width={400}
+        height={300}
         className="w-full rounded-md object-contain"
       />
       <div className="mt-2 text-sm font-medium text-slate-700">{title}</div>
     </a>
   );
 }
+
 
 export default function RpaPage() {
   return (
