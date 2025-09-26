@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // app/(site)/rpa/page.tsx
 export const metadata = {
@@ -12,8 +13,6 @@ type CertImageProps = {
   imgSrc: string;
   href: string;
 };
-
-import Image from "next/image";
 
 function CertImage({ title, imgSrc, href }: CertImageProps) {
   return (
@@ -34,7 +33,6 @@ function CertImage({ title, imgSrc, href }: CertImageProps) {
     </a>
   );
 }
-
 
 export default function RpaPage() {
   return (
@@ -91,31 +89,30 @@ export default function RpaPage() {
       </section>
 
       {/* Power Automate / Udemy */}
-<article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-  <div className="flex items-start gap-3">
-    <Image
-      src="/certs/PA/PA_Udemy-JEVG.png"
-      alt="Power Automate Desktop — Udemy Certificate"
-      width={250}
-      height={180}
-      className="rounded border border-slate-200 object-contain"
-    />
-    <div className="min-w-0">
-      <h3 className="text-sm font-semibold">
-        Power Automate Desktop — Complete RPA Course
-      </h3>
-      <p className="mt-1 text-xs text-slate-600">
-        Udemy · Instructor: Iván AlsiGo
-      </p>
-      <p className="mt-2 text-sm text-slate-700">
-        Training account was provided for practice, so the certificate
-        shows a generic user. Hands-on modules were completed by
-        José&nbsp;Emmanuel&nbsp;Vázquez-Galán.
-      </p>
-    </div>
-  </div>
-</article>
-
+      <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="flex items-start gap-3">
+          <Image
+            src="/certs/PA/PA_Udemy-JEVG.png"
+            alt="Power Automate Desktop — Udemy Certificate"
+            width={250}
+            height={180}
+            className="rounded border border-slate-200 object-contain"
+          />
+          <div className="min-w-0">
+            <h3 className="text-sm font-semibold">
+              Power Automate Desktop — Complete RPA Course
+            </h3>
+            <p className="mt-1 text-xs text-slate-600">
+              Udemy · Instructor: Iván AlsiGo
+            </p>
+            <p className="mt-2 text-sm text-slate-700">
+              Training account was provided for practice, so the certificate
+              shows a generic user. Hands-on modules were completed by{" "}
+              José&nbsp;Emmanuel&nbsp;Vázquez-Galán.
+            </p>
+          </div>
+        </div>
+      </article>
 
       {/* CTA to contact */}
       <footer className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -124,12 +121,12 @@ export default function RpaPage() {
             Interested in RPA collaborations (AA / Power Automate) or automation
             assessments?
           </p>
-          <a
+          <Link
             href="/#contact"
             className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm hover:bg-slate-50"
           >
             Contact →
-          </a>
+          </Link>
         </div>
       </footer>
     </section>
