@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    body{
+        background: #010f0a;
+    }
+
+        .Mapa{
+            padding: 2px; margin: 10px; border: 2px solid black; float: left; width:98%; height:500px;
+        }
+
+        a.Boton {
+            background: linear-gradient(180deg, #65bce8 0%, #306485 100%);
+            transition: all .3s; 
+            padding: 10px;
+            }
+
+        a.Boton:hover {
+            background: linear-gradient(180deg, #fbde74 0%, #ff9900 100%);
+            transition: all .3s;
+        }
+
+/*a.Boton {
+    width:200px;
+    height:50px;
+    background: linear-gradient(180deg, #65bce8 0%, #306485 100%);
+    transition: all .3s;
+    position: relative; 
+    top: 5000px; 
+    left: 600px;
+    font-size: 30px;
+	color: #fff;
+    text-align: center;
+}
+a.Boton:hover {
+    background: linear-gradient(180deg, #fbde74 0%, #ff9900 100%);
+    transition: all .3s;
+}*/
+
