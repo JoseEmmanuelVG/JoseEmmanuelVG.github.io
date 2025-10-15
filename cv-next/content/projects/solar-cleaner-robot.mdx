@@ -2,13 +2,133 @@
 title: "TT2 Photovoltaic Roof Cleaner"
 slug: "solar-cleaner-robot"
 summary: "Mobile robot for cleaning photovoltaic roofs. Dash UI + IoT with Raspberry/Arduino."
-category: ["Embedded/Mechatronics", "Vision/Robotics"]
-tech: ["Python", "Raspberry Pi", "OpenCV"]
+category: ["Embedded/Mechatronics", "Vision/Robotics", "IoT"]
+tech: ["Python", "Raspberry Pi 5", "Arduino", "OpenCV", "Dash", "Flask", "React.js"]
 repo: "https://github.com/JoseEmmanuelVG/TT2_Photovoltaic_Roof_Cleaner"
-date: "2024-07-17"
+date: "2023–2024"
+highlight: true
 ---
 
 # TT2 Photovoltaic Roof Cleaner
 
-Robot with autonomous displacement for PV panel cleaning.  
-Dash UI, IoT (Raspberry Pi + Arduino), and computer vision.
+**TT2 Photovoltaic Roof Cleaner** is a **mobile robot with autonomous displacement** designed to clean **photovoltaic solar rooftops**, integrating **IoT communication, computer vision, and a Python-based web interface** built with Dash and Flask.  
+
+<br />
+
+The project implements a **communication and control system** using a **Raspberry Pi 5** for remote robot operation via WiFi, focusing on modularity, usability, and real-time feedback through an interactive dashboard.
+
+<br />
+
+<Callout type="info" title="Main Objective">
+To develop and implement a communication and control system using Raspberry Pi 5 and WiFi for the **remote operation of a photovoltaic roof-cleaning mobile robot**, ensuring accessibility, safety, and responsive control.
+</Callout>
+
+<br />
+
+---
+
+<br />
+
+## 🧠 System Overview
+
+### 1️⃣ Communication & Control Modules  
+- **Hardware Setup:** Raspberry Pi 5 configured with Raspberry Pi OS, case, power adapter, HDMI connection, and SD storage.  
+- **WiFi Communication:** Validation of connectivity and remote access using the **VNC protocol**.  
+- **GPIO Management:** Python-based scripts tested for real-time control of motor drivers, relays, and sensors.  
+
+### 2️⃣ Web Application Implementation  
+A **Dash-based web application** was developed to serve as the **robot’s control and monitoring interface**, including:  
+- **User Authentication:** Security via `flask_login` and password encryption with `bcrypt`.  
+- **Callback Structure:** Modular handling of interactive elements and real-time updates.  
+- **Responsive UI:** Built with `dash_bootstrap_components` and React.js for cross-device usability.  
+
+<br />
+
+---
+
+<br />
+
+## 💻 Architecture & Project Structure  
+
+- **Assets Folder:** CSS stylesheets and local storage management.  
+- **Callback Modules:** Logical interaction and event handling.  
+- **UI Definition Files:** Layout and structure of main views.  
+- **Frameworks:** Dash + Flask backend, React.js frontend components.  
+- **Security:** Authentication and encrypted session management.  
+
+<br />
+
+---
+
+<br />
+
+## ⚙️ Core Functionalities  
+
+### 🔸 Robot Motion & Control  
+- **Interactive Buttons:** Move the robot in multiple directions via UI.  
+- **Serial Communication with Arduino:**  
+  - Roller activation (speed, inversion, power).  
+  - Sensor data reception (ultrasonic, temperature, humidity, battery).  
+  - Control of float sensors, water pump relays, and H-bridge actuators.  
+- **Navigation Improvements:** Lateral ultrasonic sensors integrated for obstacle avoidance and path correction.  
+
+### 🔸 Image Capture & Computer Vision  
+- **Camera Integration:** Capture and store images through the robot’s camera.  
+- **OpenCV-based Processing:** Image preprocessing for cleaning surface verification.  
+
+### 🔸 Web Interface Functionality  
+- **Network Inspection:** Monitoring of HTTP requests and UI performance.  
+- **Error Handling:** Logged `500` errors under loss of Raspberry Pi connection.  
+- **Accessibility Testing:** Verified responsive and intuitive user interactions.  
+
+<br />
+
+---
+
+<br />
+
+## 📊 Results  
+
+Functional, usability, and reliability tests validated:  
+- Stable WiFi communication between modules.  
+- Real-time web-based control and monitoring.  
+- Accurate execution of motion and cleaning tasks.  
+- Responsive interface under different network conditions.  
+
+Demonstration videos:
+- `UI_Navigation_JEVG.mp4` — navigation interface tests.  
+- `UI_Validation_JEVG.mp4` — control module validation.  
+- `RobotWorking_JEVG.mp4` — final prototype performance.  
+
+<br />
+
+---
+
+<br />
+
+## 🔍 Conclusions  
+
+The TT2 system successfully integrates **IoT architecture**, **web-based control**, and **embedded automation** for photovoltaic maintenance applications.  
+
+This project demonstrates:
+- The feasibility of **low-cost, remotely operated cleaning systems** for solar energy infrastructure.  
+- The integration of **Python-based dashboards** for real-time robotic control.  
+- A foundation for future implementations using **AI-based vision** and **autonomous path planning**.  
+
+<br />
+
+---
+
+<br />
+<br />
+
+<details>
+  <summary><strong>Notes & Learnings</strong> (click to expand)</summary>
+
+- Modular design enables flexible integration of additional sensors or AI modules.  
+- Network reliability is crucial for safe operation in remote environments.  
+- Combining Raspberry Pi + Arduino enhances versatility for IoT prototyping.  
+
+</details>
+
+---
