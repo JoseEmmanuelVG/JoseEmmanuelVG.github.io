@@ -3,7 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "Home", external: false },
   { href: "/projects", label: "Projects", external: false },
-  { href: "/rpa", label: "RPA", external: false },
+  { href: "/automation", label: "Automation", external: false },
   { href: "/publications", label: "Publications", external: false },
   { href: "https://bonzopedia.com", label: "Blog", external: true },
   { href: "/#contact", label: "Contact", external: false },

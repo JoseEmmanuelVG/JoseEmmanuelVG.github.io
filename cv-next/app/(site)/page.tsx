@@ -182,7 +182,7 @@ export default function Home() {
           </a>
         </div>
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 hover:shadow-md transition">
-          <h3 className="font-semibold">RPA</h3>
+          <h3 className="font-semibold">Automation</h3>
           <p className="mt-2 text-sm text-slate-600">
             Automation projects, professional journey, and certificates in AA & Power Automate.
           </p>
