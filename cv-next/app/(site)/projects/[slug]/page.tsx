@@ -2,6 +2,7 @@
 import remarkGfm from "remark-gfm";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { MDXComponents } from "../../../../components/mdx";
+import Video from "../../../../components/mdx/Video";
 import { getProjectSlugs, getProjectSource } from "../../../../lib/content";
 
 export async function generateStaticParams() {
@@ -18,9 +19,17 @@ export default async function ProjectDetailPage(
 
   const { content } = await compileMDX({
     source,
-    options: { parseFrontmatter: false, mdxOptions: { remarkPlugins: [remarkGfm] } },
-    components: MDXComponents,
-  });
+    options: { 
+      parseFrontmatter: false, 
+      mdxOptions: { remarkPlugins: [remarkGfm] } 
+    },
+    components: { 
+      ...MDXComponents, 
+      Video 
+    },
+});
+
+
 
   return (
     <article className="prose prose-slate max-w-none">
