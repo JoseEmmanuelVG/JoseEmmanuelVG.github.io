@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "RPA | JEVG",
   description:
-    "RPA and agentic automation experience by José Emmanuel Vázquez-Galán: Automation Anywhere, Microsoft Power Automate, and Microsoft Copilot Studio.",
+    "AI agentic and RPA automation experience by José Emmanuel Vázquez-Galán: Microsoft Copilot Studio, Automation Anywhere, and Microsoft Power Automate.",
 };
 
 type CertImageProps = {
@@ -33,9 +33,7 @@ function CertImage({ title, imgSrc, href, issuer, issued }: CertImageProps) {
       />
       <div className="mt-2">
         <div className="text-sm font-medium text-slate-800">{title}</div>
-        {issuer && (
-          <div className="mt-0.5 text-xs text-slate-600">{issuer}</div>
-        )}
+        {issuer && <div className="mt-0.5 text-xs text-slate-600">{issuer}</div>}
         {issued && (
           <div className="text-xs text-slate-500">Issued {issued}</div>
         )}
@@ -49,21 +47,66 @@ export default function RpaPage() {
     <section className="space-y-8">
       {/* Header */}
       <header className="space-y-2">
-        <h1 className="text-2xl font-bold tracking-tight">RPA & Agentic Automation</h1>
+        <h1 className="text-2xl font-bold tracking-tight">
+          RPA & Agentic Automation
+        </h1>
         <p className="text-sm text-slate-700">
-          Hands-on experience building end-to-end automations and AI-driven agents with{" "}
-          <strong>Automation Anywhere</strong>,{" "}
-          <strong>Microsoft Power Automate</strong>, and{" "}
-          <strong>Microsoft Copilot Studio</strong> — from opportunity assessment
-          to documentation (OH, PDD, TDD), KPIs, and enterprise delivery.
+          Hands-on experience designing <strong>RPA</strong> and{" "}
+          <strong>agentic automation</strong> solutions using{" "}
+          <strong>Microsoft Copilot Studio</strong>,{" "}
+          <strong>Automation Anywhere</strong>, and{" "}
+          <strong>Microsoft Power Automate</strong> — covering opportunity
+          assessment, governance-ready design, KPIs, and enterprise delivery.
         </p>
       </header>
+
+      {/* Microsoft Copilot Studio Certificates (MOST RECENT) */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">
+          Microsoft Copilot Studio — Certificates
+        </h2>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <CertImage
+            title="Simplify Agent Development with Copilot Studio — Proficient"
+            imgSrc="/certs/copilot/simplify-agent-development-with-copilot-studio-prof - JEVG.png"
+            href="https://www.credly.com/badges/9ce6ca6a-4f31-4c4f-9d98-e0555c3775d2/public_url"
+            issuer="Microsoft Global Channel Partner Sales (GCPS)"
+            issued="Nov 14, 2025"
+          />
+
+          <CertImage
+            title="Deploy and Adopt Microsoft 365 Copilot + Agents — Proficient"
+            imgSrc="/certs/copilot/deploy-and-adopt-microsoft-365-copilot-agents-profi (1) - JEVG.png"
+            href="https://www.credly.com/badges/a6bc6a25-d6d4-47fe-8c0c-be63eeb8fcbd/public_url"
+            issuer="Microsoft Global Channel Partner Sales (GCPS)"
+            issued="Nov 7, 2025"
+          />
+
+          <CertImage
+            title="Business Case Builder & Agents Value Envisioning Tool — Proficient"
+            imgSrc="/certs/copilot/business-case-builder-agents-value-envisioning-tool - JEVG.png"
+            href="https://www.credly.com/badges/37cac543-5a12-45c1-a3d7-374791eb7acc/public_url"
+            issuer="Microsoft Global Channel Partner Sales (GCPS)"
+            issued="Nov 7, 2025"
+          />
+
+          <CertImage
+            title="Copilot Business Value — Proficient"
+            imgSrc="/certs/copilot/copilot-business-value-proficient - JEVG.png"
+            href="https://www.credly.com/badges/37b0f2e7-759f-4a84-9f17-e68f8bc29a7d/public_url"
+            issuer="Microsoft Global Channel Partner Sales (GCPS)"
+            issued="Nov 7, 2025"
+          />
+        </div>
+      </section>
 
       {/* Automation Anywhere Certificates */}
       <section className="space-y-4">
         <h2 className="text-lg font-semibold">
           Automation Anywhere — Certificates
         </h2>
+
         <div className="grid gap-4 md:grid-cols-2">
           <CertImage
             title="Automation Developer Career Quest — Start Phase"
@@ -71,12 +114,14 @@ export default function RpaPage() {
             href="https://certificates.automationanywhere.com/embed/71f84bd8-d722-41bc-898b-a721196f5d68"
             issuer="Automation Anywhere"
           />
+
           <CertImage
             title="Automation Developer Career Quest — Completion"
             imgSrc="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/138771710"
             href="https://certificates.automationanywhere.com/embed/c3a9a1e6-3302-47a4-bd3c-29486b8c9cd0"
             issuer="Automation Anywhere"
           />
+
           <CertImage
             title="Agentic Process Automation Leader — Masterclass (APA)"
             imgSrc="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/158734365"
@@ -86,58 +131,17 @@ export default function RpaPage() {
         </div>
       </section>
 
-      {/* Microsoft Copilot Studio Certificates */}
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">
-          Microsoft Copilot Studio — Certificates
-        </h2>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          <CertImage
-            title="Simplify Agent Development with Copilot Studio — Proficient"
-            imgSrc="/certs/copilot/simplify-agent-development.png"
-            href="#"
-            issuer="Microsoft Global Channel Partner Sales (GCPS)"
-            issued="Nov 14, 2025"
-          />
-
-          <CertImage
-            title="Deploy and Adopt Microsoft 365 Copilot + Agents — Proficient"
-            imgSrc="/certs/copilot/deploy-adopt-copilot-agents.png"
-            href="#"
-            issuer="Microsoft Global Channel Partner Sales (GCPS)"
-            issued="Nov 7, 2025"
-          />
-
-          <CertImage
-            title="Business Case Builder & Agents Value Envisioning Tool — Proficient"
-            imgSrc="/certs/copilot/business-case-builder.png"
-            href="#"
-            issuer="Microsoft Global Channel Partner Sales (GCPS)"
-            issued="Nov 7, 2025"
-          />
-
-          <CertImage
-            title="Copilot Business Value — Proficient"
-            imgSrc="/certs/copilot/copilot-business-value.png"
-            href="#"
-            issuer="Microsoft Global Channel Partner Sales (GCPS)"
-            issued="Nov 7, 2025"
-          />
-        </div>
-      </section>
-
       {/* Roadmap / In progress */}
       <section className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-5">
         <h3 className="text-base font-semibold">In progress</h3>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
           <li>
-            Publishing short demos of automations and agentic workflows built
-            during certifications and enterprise PoCs.
+            Publishing demos of Copilot Studio agents integrated with RPA
+            workflows (human-in-the-loop, escalation, governance).
           </li>
           <li>
-            Designing reusable Copilot Studio agent patterns (handoff to RPA,
-            human-in-the-loop, governance-ready templates).
+            Reusable agent patterns: intake → reasoning → RPA execution →
+            validation → reporting.
           </li>
         </ul>
       </section>
@@ -172,7 +176,8 @@ export default function RpaPage() {
       <footer className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm text-slate-700">
-            Interested in RPA, Copilot Studio, or agentic automation collaborations?
+            Interested in RPA, Copilot Studio, or agentic automation
+            collaborations?
           </p>
           <Link
             href="/#contact"
