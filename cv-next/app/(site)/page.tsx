@@ -15,13 +15,21 @@ export default function Home() {
       // summary: "RPA delivery across AA & PA; client-facing, documentation, KPIs.",
       positions: [
         {
+          role: "Software Engineer – Automation, AI and Agent Specialist",
+          type: "Full-time",
+          start: "Sep 2025",
+          end: "Present",
+          bullets: [
+            "Design and develop PoC tests by integrating AI APIs, data pipelines, and specialized agents.",
+          ],
+        },
+        {
           role: "Software Engineer · RPA Consulting",
           type: "Full-time",
           start: "Apr 2025",
-          end: "Present",
-          duration: "5 mos",
+          end: "Sep 2025",
           bullets: [
-            "Managing and developing automation solutions using Automation Anywhere and Power Automate.",
+            "Managing and developing automation solutions using Automation Anywhere and Power Automate to optimize business processes.",
             "Ownership of PDD/TDD, KPIs and stakeholder alignment.",
           ],
         },
@@ -30,7 +38,6 @@ export default function Home() {
           type: "Contract",
           start: "Jan 2025",
           end: "Mar 2025",
-          duration: "3 mos",
           bullets: [
             "Led end-to-end RPA projects with AA & Microsoft PA.",
             "Developed PoCs for U.S. stakeholders; requirements & documentation.",
@@ -41,7 +48,6 @@ export default function Home() {
           type: "Apprenticeship",
           start: "Sep 2024",
           end: "Jan 2025",
-          duration: "5 mos",
           bullets: [
             "Project management training and specialized courses in AA & Power Automate.",
           ],
